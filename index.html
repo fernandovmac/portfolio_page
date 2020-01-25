@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=PT+Serif&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="randomFont.js"></script>
+<script src="modalOpener.js"></script>
+<meta http-Equiv="Cache-Control" Content="no-cache" />
+<meta http-Equiv="Pragma" Content="no-cache" />
+<meta http-Equiv="Expires" Content="0" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body onload="onLoaded()">
+<!-- <p  id="p1" onmouseover="changeFont(this)" onmouseout="keepfont(this)" fontFamily = "helvetica">This is some text.</p> -->
+<!-- <p  id="p2" onmouseover="change1Font()" onmouseout="keepfont(this)" >This is some other text.</p> -->
+
+<div id="mainTitle">
+    <h1 id="name">FERNANDO VISOCKIS</h1>
+</div>
+<div id="index">
+    <h2 id ="indexTitle">index</h1>
+    <div id="categorie">
+        <h1 class="demo" onmouseenter="generateFont(this)" onmouseout = "keepFont(this)">design</h1>
+        <div class="categorieItems">
+            
+                <a href="#" class="designItem" id="designItem1" onclick="openModal(this)">design work 1</a>
+                <p class="itemSubCategorie">show car</p>
+                <p class="itemInfo">interaction designer</p>
+                <p class="itemYear">2019</p>
+            
+            
+                <a href="#" class="designItem" id="designItem2" onclick="openModal(this)">design work 2</a>
+                <p class="itemSubCategorie">case study </p>
+                <p class="itemInfo">UX designer</p>
+                <p class="itemYear">2019</p>
+            
+            
+                <a href="#" class="designItem"  id="designItem3" onclick="openModal(this)">design work 3</a>
+                <p class="itemSubCategorie">case study </p>
+                <p class="itemInfo">UX researcher</p>
+                <p class="itemYear">2019</p>
+            
+        </div>
+    </div>
+    <div id="categorie">
+        <h1 class="demo" onmouseenter="generateFont(this)" onmouseout = "keepFont(this)">art</h1>
+        <div class="categorieItems">
+                <a href="#" class="artItem" id="artItem1" onclick="openModal(this)">art work 1</a>
+                <p class="itemSubCategorie">installation</p>
+                <p class="itemInfo">concept</p>
+                <p class="itemYear">2014</p>
+            
+            
+                <a href="#" class="artItem" id="artItem2" onclick="openModal(this)">art work 2</a>
+                <p class="itemSubCategorie">performance</p>
+                <p class="itemInfo">artist</p>
+                <p class="itemYear">2019</p>
+            
+            
+                <a href="#" class="artItem"  id="artItem3" onclick="openModal(this)">art work 3</a>
+                <p class="itemSubCategorie">print</p>
+                <p class="itemInfo">artist</p>
+                <p class="itemYear">2019</p>
+        </div>
+    </div>
+    <div id="categorie">
+            <h1 class="demo" onmouseenter="generateFont(this)" onmouseout="keepFont(this)">development</h1>
+            <div class="categorieItems">
+                    <a href="#" class="devItem" id="devItem1" onclick="openModal(this)">dev work 1</a>
+                    <p class="itemSubCategorie">experiment</p>
+                    <p class="itemInfo">hardware developer</p>
+                    <p class="itemYear">2015</p>
+                
+                
+                    <a href="#" class="devItem" id="devItem2" onclick="openModal(this)">dev work 2</a>
+                    <p class="itemSubCategorie">web</p>
+                    <p class="itemInfo">front-end developer</p>
+                    <p class="itemYear">2016</p>
+                
+                
+                    <a href="#" class="devItem"  id="devItem3" onclick="openModal(this)">dev work 3</a>
+                    <p class="itemSubCategorie">case study </p>
+                    <p class="itemInfo">UX researcher</p>
+                    <p class="itemYear">2019</p>
+            </div>
+        </div>
+        <div id="categorie">
+                <h1 class="demo" onmouseenter="generateFont(this)" onmouseout = "keepFont(this)">sound & music</h1>
+                <div class="categorieItems">
+                        <a href="#" class="musItem" id="musItem1" onclick="openModal(this)">music work 1</a>
+                        <p class="itemSubCategorie">album</p>
+                        <p class="itemInfo">composer</p>
+                        <p class="itemYear">2015</p>
+                    
+                    
+                        <a href="#" class="musItem" id="musItem2" onclick="openModal(this)">music work 2</a>
+                        <p class="itemSubCategorie">showreel</p>
+                        <p class="itemInfo">sound designer</p>
+                        <p class="itemYear">2016</p>
+                    
+                    
+                        <a href="#" class="musItem"  id="musItem3" onclick="openModal(this)">music work 3</a>
+                        <p class="itemSubCategorie">ensemble piece</p>
+                        <p class="itemInfo">composer</p>
+                        <p class="itemYear">2019</p>
+                </div>
+            </div>        
+</div>
+<div id="footer">footer links go here</div>
+
+<!-- The Modals -->
+<!-- Design Modals -->
+<div id="myModaldesignItem1" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h2 class="modalTitle">Design Work1</h2>
+          <div class="modalVideo">
+            <iframe id="videoContent"
+          src="https://player.vimeo.com/video/170450509" width="1080" height="360" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe> 
+          </div>
+          <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/lWgvuOuZHfg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+          <!-- <iframe title="vimeo-player" src="https://player.vimeo.com/video/170450509" width="640" height="360" frameborder="0" allowfullscreen></iframe> -->
+        <div class=projectInfo>
+          <p id=projectCategorie>done while high on meth</p>
+          <p id=projectDescription>here a long description of how long it took how much money i made and why is this not relevant at all for anyone who's alive</p>
+        </div>
+        </div>
+      
+ </div>
+
+ <div id="myModaldesignItem2" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h2 class="modalTitle">Modal 2</h2>
+          <div class="container">
+            <h1>My First Bootstrap Page</h1>
+            <p>This is some text.</p>
+          </div>
+        </div>
+      
+ </div>
+ <div id="myModaldesignItem3" class="modal">
+
+        <!-- Modal content -->
+        <div class="container">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h2 class="modalTitle">Modal 3</h2>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item"
+              src="https://player.vimeo.com/video/170450509" width="340" height="360" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                  </iframe> 
+            </div>
+            <div class="true" id="projectDescription">
+                <h5 id=projectCategorie>done while high on meth</h5>
+                <p id=projectDescription>here a long description of how long it took how much money i made and why is this not relevant at all for anyone who's alive</p>
+              </div>
+        </div>
+      </div>
+ </div>  
+
+
+ <!-- Art Modals -->
+
+ <div id="myModalartItem1" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h2 class="modalTitle">Art 1</h2>
+          <p>Some text2 in the Modal..</p>
+          <p>Some text2 in the Modal..</p>
+          <p>Some text2 in the Modal..</p>
+          <p>Some more text in the Modal..</p>
+        </div>
+      
+ </div> 
+
+ <div id="myModalartItem2" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h2 class="modalTitle">Art 2</h2>
+          <p>Some text2 in the Modal..</p>
+          <p>Some text2 in the Modal..</p>
+          <p>Some text2 in the Modal..</p>
+          <p>Some more text in the Modal..</p>
+        </div>
+      
+ </div> 
+
+ <div id="myModalartItem3" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h2 class="modalTitle">Art 3</h2>
+          <p>Some text2 in the Modal..</p>
+          <p>Some text2 in the Modal..</p>
+          <p>Some text2 in the Modal..</p>
+          <p>Some more text in the Modal..</p>
+        </div>
+      
+ </div> 
+
+ <!-- dev Modals -->
+
+ <div id="myModaldevItem1" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h2 class="modalTitle">Dev 1</h2>
+          <p>Some text2 in the Modal..</p>
+          <p>Some text2 in the Modal..</p>
+          <p>Some text2 in the Modal..</p>
+          <p>Some more text in the Modal..</p>
+        </div>
+      
+ </div> 
+
+ <div id="myModaldevItem2" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h2 class="modalTitle">Dev 2</h2>
+          <p>Some text2 in the Modal..</p>
+          <p>Some text2 in the Modal..</p>
+          <p>Some text2 in the Modal..</p>
+          <p>Some more text in the Modal..</p>
+        </div>
+      
+ </div>
+
+ <div id="myModaldevItem3" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h2 class="modalTitle">Dev 3</h2>
+          <p>Some text2 in the Modal..</p>
+          <p>Some text2 in the Modal..</p>
+          <p>Some text2 in the Modal..</p>
+          <p>Some more text in the Modal..</p>
+        </div>
+      
+ </div>
+
+ <!-- mus Modals -->
+
+ <div id="myModalmusItem1" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h2 class="modalTitle">mus 1</h2>
+          <p>Some text2 in the Modal..</p>
+          <p>Some text2 in the Modal..</p>
+          <p>Some text2 in the Modal..</p>
+          <p>Some more text in the Modal..</p>
+        </div>
+      
+ </div> 
+
+ <div id="myModalmusItem2" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h2 class="modalTitle">mus 2</h2>
+          <p>Some text2 in the Modal..</p>
+          <p>Some text2 in the Modal..</p>
+          <p>Some text2 in the Modal..</p>
+          <p>Some more text in the Modal..</p>
+        </div>
+      
+ </div>
+
+ <div id="myModalmusItem3" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h2 class="modalTitle">mus 3</h2>
+          <p>Some text2 in the Modal..</p>
+          <p>Some text2 in the Modal..</p>
+          <p>Some text2 in the Modal..</p>
+          <p>Some more text in the Modal..</p>
+        </div>
+      
+ </div>
+</body>
+
+</html>
